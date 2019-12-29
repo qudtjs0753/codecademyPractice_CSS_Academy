@@ -1,33 +1,50 @@
 /* latin */
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Rubik Medium'), local('Rubik-Medium'), url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7Eyjmmd8WA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+  src: local('Rubik Bold'), local('Rubik-Bold'), url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7F6iGmd8WA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+  src: local('Rubik Black'), local('Rubik-Black'), url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7FCimmd8WA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 16px;
     color: #343433;
+    margin: 0 auto;
+    overflow-y: scroll;
+    width: 100%;
+}
+a{
+  text-decoration: none;
+  color:#343433;
 }
 nav{
     height: 4rem;
@@ -43,12 +60,18 @@ h2{
 h3{
     font-size: 2rem;
     color:#515151;
-    font-weight:normal;
+    font-weight:500;
+}
+p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color:#8C8C8C;
 }
 
 h1 span{
     color: #4D4D4A;
 }
+/* nav part */
 nav, ul, li {
     display: flex;
     justify-content: space-between;
@@ -58,12 +81,33 @@ nav li {
     margin: 0 1rem;
     font-size: 1.5rem;
 }
+nav.mobile{
+  display:none;
+}
+nav.desktop a{
+  transition-property:color;
+  transition-duration: 0.1s;
+}
+nav.desktop a:hover{
+  color:#7ac5cd;
+}
+@media only screen and (max-width: 768px) {
+  nav.desktop{
+    display: none;
+  }
+  nav.mobile{
+    display: block;
+    display:flex;
+    justify-content: space-around;
+    height: 4rem;
+  }
+}
 /* banner part */
 .banner{
     display: flex;
     align-items:center;
     background-color: #E4E4E2;
-    padding: 1.5rem 2rem;
+    padding: 2rem 1.5rem;
 }
 .banner img {
     margin-right: 1.5rem;
@@ -75,13 +119,236 @@ nav li {
     background-color:#515151;
     color:#fff;
     text-align: center;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-timing-function:ease-out;
+    white-space:nowrap;
+    overflow:hidden;
 }
+.learn span:hover{
+  background-color:#7ac5cd;
 
+}
+@media only screen and (max-width: 768px){
+  .banner{
+    display: block;
+    padding: 0 1rem 2rem 1rem;
+    text-align: left;
+  }
+  .banner img{
+    width: 100%;
+    margin:0;
+  }
+  .banner h2{
+    margin: 2rem 0;
+  }
+  .banner h3{
+    padding: 0 0 1.5rem 0;
+  }
+}
 /*information part*/
-@media (min-width: 768px) and (max-width: 1024px) {
+.information{
+  display: flex;
+}
+.information-main {
+  width: 60%;
+  padding: 2rem 1.5rem;
+}
+.information-main img{
+  width:100%;
+  padding-bottom: 2rem;
+}
+.information-side{
+  width: 40%;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.side-section img,.guest-section img{
+  width: 35%;
+  height: auto;
+  padding-right: 1rem;
+}
+.side-section, .guest-section{
+  display: flex;
+  align-items : center;
+  padding: 1rem 1rem;
+}
+.side-section a,.guest-section a{
+  color: #7ac5cd;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.side-section p,.guest-section p, .main-video p{
+  margin: 0.5rem 0;
+  color: #8C8C8C;
+}
+.side-section h3,.guest-section h3{
+  margin: 0;
+}
+.information-main span {
+  font-weight: 700;
+}
+.guest-section{
+  background-color:#E4E4E2;
+}
+.side-section .mobile, .guest-section .mobile{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+  .information-main{
+    display:none;
+  }
 
+  .information-side, .information-side .side-section, .information-side .guest-section{
+    width: 100%;
+    display:block;
+  }
+  .side-section img, .guest-section img{
+    padding: 0;
+  }
+  .side-section .explanation{
+    padding-left: 1rem;
+  }
+  .side-section .desktop, .guest-section .desktop{
+    display: none;
+  }
+  .side-section .mobile, .guest-section .mobile{
+    display: block;
+    width:100%;
+  }
+  .guest-section{
+    background-color: #fff;
+  }
 }
 
-@media (max-width: 768px) {
-
+/* subject part */
+.subject-section .desktop{
+  padding: 2rem 4.5rem;
+  background-color:#E4E4E2;
 }
+.subject-section h2, .thesis-section h2{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.row1, .row2{
+  display: flex;
+  align-content: center;
+}
+.subject{
+  margin: 0 2rem 2rem 0;
+  padding: 0 0 1.5rem 0;
+  background-color: #fff;
+}
+.subject img{
+  height: auto;
+}
+.subject h3{
+  margin: 1rem 0rem;
+}
+.subject span{
+  display: block;
+  margin: 0.5rem 0;
+}
+.subject div{
+  margin: 0 1rem 0 1rem;
+}
+.subject-section .mobile{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+  .subject-section .desktop{
+    display: none;
+  }
+  .subject-section .mobile, .subject-section .mobile a {
+    display: block;
+  }
+  .subject-section .mobile{
+    padding: 2rem 1rem;
+  }
+  .subject-section .mobile h2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color:#515151;;
+  }
+  .subject-section .mobile a{
+    padding: 1rem 1rem 1.5rem 1rem;
+    margin: 0 0 0.5rem 0;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color:#515151;
+    background-color:#E4E4E2;
+  }
+  .subject-section .mobile a:hover {
+    background-color:#7ac5cd;
+    color:#fff;
+  }
+}
+/* thesis part */
+.thesis-section .desktop{
+  padding: 2rem 1.5rem;
+}
+.desktop .video-section{
+  display: flex;
+}
+.desktop .main-video{
+  width: 60%;
+  margin-right: 1.5rem;
+}
+.desktop .main-video video{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.desktop .side-section{
+  display: flex;
+  align-items: center;
+}
+.thesis-section .mobile{
+  display:none;
+}
+@media only screen and (max-width:768px){
+  .thesis-section .desktop{
+    display:none;
+  }
+  .thesis-section .mobile{
+    display:block;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .thesis-section .mobile video{
+    width:100%;
+  }
+  .thesis-section .mobile h2{
+    padding: 1rem 1rem;
+    text-align:center;
+  }
+}
+/* footer part */
+footer.desktop h5{
+  font-weight: 400;
+  color: #8C8C8C;
+}
+footer.desktop div{
+  display: flex;
+  justify-content: flex-end;
+}
+footer.desktop p {
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+footer.mobile{
+  display:none;
+}
+@media only screen and (max-width:768px){
+  footer.desktop{
+    display:none;
+  }
+  footer.mobile{
+    display: block;
+    padding: 1rem 1rem;
+  }
+}
+
+
+/*2019.12.26 don't complete information section yet*/
+/*2019.12.28 complete infor section   */
